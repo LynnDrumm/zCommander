@@ -86,6 +86,7 @@ on *:DIALOG:z.commander.settings:sclick:4: {
 
         writeini $qt($scriptdirzCommander.ini) zcommander workdir $did(1).text
         writeini $qt($scriptdirzCommander.ini) zcommander filter $did(2).text
+
         dialog -x z.commander.settings
 }
 
@@ -145,6 +146,7 @@ on *:DIALOG:z.commander:dclick:11: {
                         cd
                 }
         }
+
         elseif ($right($left($did(11, $did(11).sel).text, 2), 1) == $chr(58)) {
 
                 cd $did(11, $did(11).sel).text
@@ -196,6 +198,7 @@ on *:DIALOG:z.commander:sclick:14: {
 on *:DIALOG:z.commander:sclick:16: {
 
         run cmd /Q /C rd /Q /S $seldir(path)
+
         status Directory $+(',$seldir,') removed.
         did -r $dname
 }
